@@ -1352,7 +1352,7 @@ dependencies = [
 
 [[package]]
 name = "kubectl-delta"
-version = "0.2.1"
+version = "0.2.2"
 dependencies = [
  "anyhow",
  "clap 3.2.20",
