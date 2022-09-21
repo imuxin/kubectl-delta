@@ -1,7 +1,7 @@
 ==87== Memcheck, a memory error detector
 ==87== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==87== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==87== Command: ./alpine-kubectl-watch -n ql-ovn pod
+==87== Command: ./alpine-kubectl-delta -n ql-ovn pod
 ==87==
 ==87== Jump to the invalid address stated on the next line
 ==87==    at 0x0: ???
@@ -13,7 +13,7 @@
 ==87==    by 0xD2EFE7: <kube_client::client::Client as core::convert::TryFrom<kube_client::config::Config>>::try_from (mod.rs:456)
 ==87==    by 0x34EDE9: kube_client::client::Client::try_default::{{closure}} (mod.rs:128)
 ==87==    by 0x2CE156: <core::future::from_generator::GenFuture<T> as core::future::future::Future>::poll (mod.rs:91)
-==87==    by 0x2BE965: kubectl_watch::main::{{closure}} (main.rs:100)
+==87==    by 0x2BE965: kubectl_delta::main::{{closure}} (main.rs:100)
 ==87==    by 0x2CD5F8: <core::future::from_generator::GenFuture<T> as core::future::future::Future>::poll (mod.rs:91)
 ==87==    by 0x31E2DF: tokio::park::thread::CachedParkThread::block_on::{{closure}} (thread.rs:267)
 ==87==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
@@ -30,7 +30,7 @@
 ==87==    by 0xD2EFE7: <kube_client::client::Client as core::convert::TryFrom<kube_client::config::Config>>::try_from (mod.rs:456)
 ==87==    by 0x34EDE9: kube_client::client::Client::try_default::{{closure}} (mod.rs:128)
 ==87==    by 0x2CE156: <core::future::from_generator::GenFuture<T> as core::future::future::Future>::poll (mod.rs:91)
-==87==    by 0x2BE965: kubectl_watch::main::{{closure}} (main.rs:100)
+==87==    by 0x2BE965: kubectl_delta::main::{{closure}} (main.rs:100)
 ==87==    by 0x2CD5F8: <core::future::from_generator::GenFuture<T> as core::future::future::Future>::poll (mod.rs:91)
 ==87==    by 0x31E2DF: tokio::park::thread::CachedParkThread::block_on::{{closure}} (thread.rs:267)
 ==87==
@@ -53,7 +53,7 @@
 ==87==    by 0xD2EFE7: <kube_client::client::Client as core::convert::TryFrom<kube_client::config::Config>>::try_from (mod.rs:456)
 ==87==    by 0x34EDE9: kube_client::client::Client::try_default::{{closure}} (mod.rs:128)
 ==87==    by 0x2CE156: <core::future::from_generator::GenFuture<T> as core::future::future::Future>::poll (mod.rs:91)
-==87==    by 0x2BE965: kubectl_watch::main::{{closure}} (main.rs:100)
+==87==    by 0x2BE965: kubectl_delta::main::{{closure}} (main.rs:100)
 ==87==    by 0x2CD5F8: <core::future::from_generator::GenFuture<T> as core::future::future::Future>::poll (mod.rs:91)
 ==87==    by 0x31E2DF: tokio::park::thread::CachedParkThread::block_on::{{closure}} (thread.rs:267)
 ==87==  Address 0x0 is not stack'd, malloc'd or (recently) free'd

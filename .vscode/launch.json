@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch kubectl-watch",
+            "name": "(gdb) Launch kubectl-delta",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/target/debug/kubectl-watch",
+            "program": "${workspaceFolder}/target/debug/kubectl-delta",
             "args": [
                 "gatewaydeploy",
                 "-n",

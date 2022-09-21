@@ -1,4 +1,4 @@
-# kubectl-watch
+# kubectl-delta
 
 [English](./README.md)
 
@@ -14,24 +14,24 @@
 ### [推荐] 方式一：使用 Docker 镜像
 
 1. 您需要在环境里预先安装好 Docker，参考 [官网](https://docs.docker.com/engine/install/)；或者安装 containerd，参考 [安装教程](https://github.com/containerd/containerd/blob/main/docs/getting-started.md#installing-containerd) 和 [nerdctl](https://github.com/containerd/nerdctl) 命令行工具。
-2. 拷贝 script 目录下的 kubectl-watch 脚本到环境的 $PATH 其中的一个目录下，比如 `/usr/local/bin`。
+2. 拷贝 script 目录下的 kubectl-delta 脚本到环境的 $PATH 其中的一个目录下，比如 `/usr/local/bin`。
 ```bash
-cp script/kubectl-watch /usr/local/bin/
-chmod +x /usr/local/bin/kubectl-watch
+cp script/kubectl-delta /usr/local/bin/
+chmod +x /usr/local/bin/kubectl-delta
 ```
 
-### 方式二：从 [release assets](https://github.com/imuxin/kubectl-watch/releases) 下载可执行制品。
-### 方式三：使用 [Cargo](https://crates.io/crates/kubectl-watch)进行源码编译安装。
+### 方式二：从 [release assets](https://github.com/imuxin/kubectl-delta/releases) 下载可执行制品。
+### 方式三：使用 [Cargo](https://crates.io/crates/kubectl-delta)进行源码编译安装。
 
 ```bash
-cargo install kubectl-watch --locked
+cargo install kubectl-delta --locked
 ```
 
 ## Cmd 帮助
 
 ```bash
 USAGE:
-    kubectl-watch [OPTIONS] [ARGS]
+    kubectl-delta [OPTIONS] [ARGS]
 
 ARGS:
     <RESOURCE>    Support resource 'plural', 'kind' and 'shortname'
@@ -54,37 +54,37 @@ OPTIONS:
 
 监听所有命名空间下的 deployment 资源
 ```bash
-kubectl-watch deployment -A
+kubectl-delta deployment -A
 ```
 
 监听某个命名空间下的 depoyment 资源
 ```bash
-kubectl-watch deployment -n {namespace}
+kubectl-delta deployment -n {namespace}
 ```
 
 监听某个命名空间下的某个 depoyment 资源
 ```bash
-kubectl-watch deployment -n {namespace} {name}
+kubectl-delta deployment -n {namespace} {name}
 ```
 
 追加 `--skip-delta` 选项，仅监听变动资源，同 `kubectl get -w`
 ```bash
-kubectl-watch {resource} --delta
+kubectl-delta {resource} --delta
 ```
 
 追加 `--diff-tool difft` 选项来使用 `difftastic` 工具显示变化内容
 ```bash
-kubectl-watch {resource} --diff-tool difft
+kubectl-delta {resource} --diff-tool difft
 ```
 
 追加 `--export "/to/your/path"` 选项，导出监听的资源到本地存储
 ```bash
-kubectl-watch {resource} --export "/to/your/path"
+kubectl-delta {resource} --export "/to/your/path"
 ```
 
 `managed-fields` 默认是不进行比对的, 追加 `--include-managed-fields` 选项，展示 managed fields 的变化
 ```bash
-kubectl-watch {resource} -include-managed-fields
+kubectl-delta {resource} -include-managed-fields
 ```
 
 ## 致谢

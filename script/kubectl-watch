@@ -6,8 +6,8 @@ SUDO="sudo"
 CMD_DOCKER=docker
 CMD_NERDCTL=nerdctl
 CMD=""
-# IMG="ghcr.io/imuxin/kubectl-watch:latest"
-IMG="docker.io/slic/kubectl-watch:latest" # docker hub image
+# IMG="ghcr.io/imuxin/kubectl-delta:latest"
+IMG="docker.io/slic/kubectl-delta:latest" # docker hub image
 KUBECONF="$HOME/.kube/config"
 MOUNTKUBECONF="/root/.kube/config"
 
@@ -20,7 +20,7 @@ function cmd_exists() {
 }
 
 
-function kubectl_watch() {
+function kubectl_delta() {
 	if cmd_exists $CMD_DOCKER
 	then
 		CMD=$CMD_DOCKER
@@ -34,4 +34,4 @@ function kubectl_watch() {
 	$SUDO $CMD run -ti --rm -v $KUBECONF:$MOUNTKUBECONF $IMG $@
 }
 
-kubectl_watch $@
+kubectl_delta $@

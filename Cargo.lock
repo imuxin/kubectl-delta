@@ -1351,7 +1351,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "kubectl-watch"
+name = "kubectl-delta"
 version = "0.2.1"
 dependencies = [
  "anyhow",

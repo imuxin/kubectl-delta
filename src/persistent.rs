@@ -15,7 +15,7 @@ pub fn tmp_store(
     let r_yaml = serde_yaml::to_string(r).unwrap();
 
     let mut path = temp_dir();
-    path.push("kubectl-watch");
+    path.push("kubectl-delta");
     fs::create_dir_all(&path).unwrap();
     let mut minus_file = path.clone();
     minus_file.push("minus.yaml");

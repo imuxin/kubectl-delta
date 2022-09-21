@@ -38,7 +38,7 @@ jobs:
       - uses: taiki-e/upload-rust-binary-action@v1
         with:
           include: LICENSE,README.md
-          bin: kubectl-watch
+          bin: kubectl-delta
           # (optional) On which platform to distribute the `.tar.gz` file.
           # [default value: unix]
           # [possible values: all, unix, windows, none]
